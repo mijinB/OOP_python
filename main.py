@@ -1,23 +1,14 @@
-class Human:
+class Dog:
   def __init__(self, name):
     self.name = name
 
-  def say_hello(self):
-    print(f"hello my name is {self.name}")
+  #클래스가 문자열로 보이는 방식을 바꿀 수 있다.
+  def __str__(self):
+    print(super().__str__())
+    return f"Dog: {self.name}"
 
 
-class Player(Human):
-  def __init__(self, name, xp):
-    super().__init__(name)
-    self.xp = xp
-
-class Fan(Human):
-  def __init__(self, name, fav_team):
-    super().__init__(name)
-    self.fav_team = fav_team
-
-
-nico_player = Player("nico", 10)
-nico_player.say_hello()
-nico_fan = Fan("nico_fan", "blue")
-nico_fan.say_hello()
+jia = Dog("jia")
+print(jia)
+paul = Dog("paul")
+print(paul)
